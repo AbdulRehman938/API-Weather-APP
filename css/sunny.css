@@ -1,0 +1,10 @@
+body {
+  background: linear-gradient(to bottom, #fdd835, #ffb300);
+  animation: sunPulse 8s infinite alternate;
+  transition: background 0.5s ease;
+}
+
+@keyframes sunPulse {
+  0%   { filter: brightness(1); }
+  100% { filter: brightness(1.2); }
+}

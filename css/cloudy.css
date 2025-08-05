@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(to bottom, #90a4ae, #607d8b);
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 200%;
+  height: 100%;
+  background: url('https://i.ibb.co/YTbB9nX/clouds.png') repeat-x;
+  background-size: cover;
+  animation: cloudsMove 60s linear infinite;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+@keyframes cloudsMove {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

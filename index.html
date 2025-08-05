@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Weather App</h1>
+            <div class="header-controls">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="locationBtn" class="location-btn">
+                    <i class="fas fa-location-dot"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="cityInput" placeholder="Enter city name..." class="search-input">
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message hidden">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Unable to fetch weather data. Please try again.</p>
+        </div>
+
+        <!-- Main Weather Card -->
+        <div id="weatherCard" class="weather-card hidden">
+            <div class="weather-header">
+                <div class="location-info">
+                    <h2 id="cityName">Delhi, India</h2>
+                    <p id="currentDate">17th Jun '21</p>
+                    <p id="currentTime">Thursday 2:45 am</p>
+                </div>
+                <div class="weather-icon">
+                    <i id="mainWeatherIcon" class="fas fa-cloud"></i>
+                </div>
+            </div>
+
+            <div class="temperature-section">
+                <div class="main-temp">
+                    <span id="currentTemp">27</span>
+                    <span class="temp-unit">°C</span>
+                </div>
+                <div class="weather-description">
+                    <p id="weatherDesc">Golden Hour</p>
+                </div>
+            </div>
+
+            <div class="sun-times">
+                <div class="sun-time">
+                    <span class="label">Sunrise</span>
+                    <span id="sunriseTime">6:00 AM</span>
+                </div>
+                <div class="sun-time">
+                    <span class="label">Sunset</span>
+                    <span id="sunsetTime">7:21 PM</span>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <i class="fas fa-wind"></i>
+                    <span class="label">Wind</span>
+                    <span id="windSpeed">10 km/h</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-droplet"></i>
+                    <span class="label">Humidity</span>
+                    <span id="humidity">54%</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-cloud-rain"></i>
+                    <span class="label">Rain</span>
+                    <span id="rainChance">0.2%</span>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>4-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-container">
+                    <!-- Forecast items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="quality-indices">
+                <div class="quality-item">
+                    <span class="label">Air Quality</span>
+                    <div class="quality-circle">
+                        <span id="airQuality">2/5</span>
+                        <span class="quality-text">Moderate</span>
+                    </div>
+                </div>
+                <div class="quality-item">
+                    <span class="label">UV Index</span>
+                    <div class="quality-circle">
+                        <span id="uvIndex">6/10</span>
+                        <span class="quality-text">High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Theme Selector -->
+        <div class="theme-selector">
+            <h3>Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option active" data-theme="gradient1">
+                    <div class="theme-preview theme-preview-1"></div>
+                </button>
+                <button class="theme-option" data-theme="gradient2">
+                    <div class="theme-preview theme-preview-2"></div>
+                </button>
+                <button class="theme-option" data-theme="gradient3">
+                    <div class="theme-preview theme-preview-3"></div>
+                </button>
+                <button class="theme-option" data-theme="gradient4">
+                    <div class="theme-preview theme-preview-4"></div>
+                </button>
+                <button class="theme-option" data-theme="gradient5">
+                    <div class="theme-preview theme-preview-5"></div>
+                </button>
+                <button class="theme-option" data-theme="gradient6">
+                    <div class="theme-preview theme-preview-6"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
